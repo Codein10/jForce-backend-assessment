@@ -4,12 +4,12 @@ import connectDb from "./src/db/index.js";
 import authRoutes from "./src/routes/authRoutes.js";
 import feedbackRoutes from "./src/routes/feedbackRoutes.js";
 import adminFeedbackRoutes from "./src/routes/adminFeedbackRoutes.js";
-
+import cors from "cors";
 dotenv.config({ path: "./.env" });
-
 const app = express();
 const port = Number(process.env.PORT) || 8000;
 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
